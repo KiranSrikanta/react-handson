@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "webpack-dev-server --content-base src/client/public --inline --hot --port 9000",
+    "lint": "eslint src/client/app/**/*.js",
+    "lint:watch": "esw src/client/app/**/*.js -w"
   },
   "author": "",
   "license": "ISC",
@@ -19,6 +21,7 @@
     "eslint": "^2.13.1",
     "eslint-plugin-react": "^5.2.2",
     "eslint-watch": "^2.1.11",
+    "npm-run-all": "^2.2.0",
     "webpack": "^1.13.1",
     "webpack-dev-server": "^1.14.1"
   }

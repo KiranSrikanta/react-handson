@@ -1,4 +1,4 @@
-import React, {PropType} from 'react';
+import React, {PropTypes} from 'react';
 
 class Header extends React.Component {
   render() {
@@ -12,8 +12,8 @@ class Header extends React.Component {
 }
 
 Header.propTypes = {
-  message: PropType.string.isRequired,
-  onChange: PropType.func
+  message: PropTypes.string.isRequired,
+  onChange: PropTypes.func
 };
 
 export default Header;
