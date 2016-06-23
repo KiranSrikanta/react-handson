@@ -1,19 +1,27 @@
+import {IndexLink, Link} from 'react-router';
 import React, {PropTypes} from 'react';
+
+class NavIndexLink extends React.Component {
+  render() {
+    
+  }
+}
+
+NavIndexLink.contextTypes = {router: PropTypes.object};
 
 class Header extends React.Component {
   render() {
     return (
-      <div className="header">
-        {this.props.message}
-        <input type="text" value={this.props.message} onChange={this.props.onChange} />
-      </div>
+      <ul className="header nav nav-tabs">
+        <li role="presentation">
+          <IndexLink to="/" activeClassName="active">Home</IndexLink>
+        </li>
+        <li role="presentation">
+          <Link to="/todo" activeClassName="active">TODO</Link>
+        </li>
+      </ul>
     );
   }
 }
-
-Header.propTypes = {
-  message: PropTypes.string.isRequired,
-  onChange: PropTypes.func
-};
 
 export default Header;

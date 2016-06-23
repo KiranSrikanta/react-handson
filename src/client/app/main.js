@@ -1,28 +1,11 @@
-import Header from './common/components/header';
+import '../../../node_modules/bootstrap/dist/css/bootstrap.css';
+import '../../../node_modules/bootstrap/dist/css/bootstrap-theme.css';
+import {Router, browserHistory} from 'react-router';
 import React from 'react';
 import {render} from 'react-dom';
-
-class App extends React.Component {
-  constructor() {
-    super();
-    this.state = {message: 'Hello'};
-    this.onMessageChange = this.onMessageChange.bind(this);
-  }
-
-  onMessageChange(event) {
-    this.setState({message: event.target.value});
-  }
-
-  render () {
-    return (
-        <div className="app-main">
-            <Header message={this.state.message} onChange={this.onMessageChange} />
-        </div>
-    );
-  }
-}
+import routes from './routes';
 
 render(
-  <App></App>,
+  <Router history={browserHistory} routes={routes} />,
   document.getElementById('app')
 );
