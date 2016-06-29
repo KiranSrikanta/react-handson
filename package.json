@@ -4,10 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "npm-run-all --parallel dev lint:watch",
+    "start": "npm-run-all --parallel dev test:watch lint:watch",
     "dev": "webpack-dev-server --content-base src/client/public --inline --hot --port 9000",
     "lint": "eslint src/client/app/**/*.js",
-    "lint:watch": "esw src/client/app/**/*.js -w"
+    "lint:watch": "esw src/client/app/**/*.js -w",
+    "test": "karma start",
+    "test:watch": "karma start --auto-watch --no-single-run"
   },
   "author": "",
   "license": "ISC",
