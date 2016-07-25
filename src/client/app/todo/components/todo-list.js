@@ -1,4 +1,5 @@
 import React, {PropTypes} from 'react';
+import {Link} from 'react-router';
 
 class TodoList extends React.Component {
   constructor() {
@@ -14,7 +15,7 @@ class TodoList extends React.Component {
   renderTodoRow(todo, index) {
     return (
       <tr key={index}>
-        <td>{todo.title}</td>
+        <td><Link to={`todo/edit/${index}`}>{todo.title}</Link></td>
         <td>{todo.description}</td>
         <td>{todo.date.toLocaleString()}</td>
         <td><input type="checkbox" value={todo.checked} onChange={this.onTodoComplete.bind(this, index)}></input></td>

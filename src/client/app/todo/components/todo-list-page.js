@@ -1,3 +1,4 @@
+import {Link} from 'react-router';
 import React from 'react';
 import TodoList from './todo-list';
 
@@ -35,6 +36,7 @@ class TodoListPage extends React.Component {
     return (
       <div className="todo-list-page">
         <TodoList todos={this.state.todos} onComplete={this.onComplete}></TodoList>
+        <Link to="/todo/new">Add Task</Link>
       </div>
     );
   }
